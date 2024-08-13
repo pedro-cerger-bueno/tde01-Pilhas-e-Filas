@@ -6,7 +6,7 @@ class Pilha {
     public Pilha(int capacidade) {
         this.capacidade = capacidade;
         this.dados = new int[capacidade];
-        this.topo = -1; // Stack is initially empty
+        this.topo = -1; 
     }
 
     public boolean insere(int elemento) {
@@ -30,7 +30,7 @@ class Pilha {
         if (!vazia()) {
             return dados[topo--];
         } else {
-            return null; // Or throw an exception
+            return null; 
         }
     }
 
@@ -47,10 +47,10 @@ class Pilha {
 
 public class Main {
     public static void main(String[] args) {
-        // Criando uma pilha com capacidade para 5 elementos
+       
         Pilha pilha = new Pilha(5);
         
-        // Inserindo elementos na pilha
+        
         System.out.println("Adicionando itens na pilha...");
         System.out.println();
         pilha.insere(10);
@@ -59,22 +59,22 @@ public class Main {
         pilha.insere(40);
         pilha.insere(50);
 
-        // Verificando se a pilha está cheia
+        
         if (pilha.cheia()) {
             System.out.println("A pilha está cheia.");
             System.out.println();   
         }
 
-        // Imprimindo todos os elementos da pilha
+        
         pilha.imprime();
 
-        // Removendo um elemento da pilha
+        
         pilha.remove();
         System.out.println();
         System.out.println("Removendo 1 item...");
         System.out.println();
 
-        // Imprimindo todos os elementos da pilha após a remoção
+        
         pilha.imprime();
 
         System.out.println();
@@ -86,7 +86,7 @@ public class Main {
             pilha.imprime();
             System.out.println();
         }
-        // Verificando se a pilha está vazia
+       
         if (pilha.vazia()) {
         } else {
             System.out.println("A pilha ainda possui elementos.");
