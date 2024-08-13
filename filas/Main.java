@@ -8,16 +8,16 @@ class Fila {
     public Fila(int capacidade) {
         this.capacidade = capacidade;
         this.dados = new int[capacidade];
-        this.frente = 0; // Índice inicial do primeiro elemento
-        this.tras = -1;  // Índice inicial onde o próximo elemento será inserido
-        this.tamanho = 0; // Inicialmente a fila está vazia
+        this.frente = 0; 
+        this.tras = -1;  
+        this.tamanho = 0; 
     }
 
     public boolean insere(int elemento) {
         if (cheia()) {
             return false;
         } else {
-            tras = (tras + 1) % capacidade; // Move para o próximo índice de forma circular
+            tras = (tras + 1) % capacidade; 
             dados[tras] = elemento;
             tamanho++;
             return true;
@@ -35,11 +35,11 @@ class Fila {
     public Integer remove() {
         if (!vazia()) {
             int elementoRemovido = dados[frente];
-            frente = (frente + 1) % capacidade; // Move para o próximo índice de forma circular
+            frente = (frente + 1) % capacidade;
             tamanho--;
             return elementoRemovido;
         } else {
-            return null; // Ou lançar uma exceção
+            return null; 
         }
     }
 
@@ -60,10 +60,10 @@ class Fila {
 
 public class Main {
     public static void main(String[] args) {
-        // Criando uma fila com capacidade para 5 elementos
+        
         Fila fila = new Fila(5);
         
-        // Inserindo elementos na fila
+        
         System.out.println("Adicionando itens na fila...");
         System.out.println();
         fila.insere(1);
@@ -72,22 +72,22 @@ public class Main {
         fila.insere(4);
         fila.insere(5);
 
-        // Verificando se a fila está cheia
+       
         if (fila.cheia()) {
             System.out.println("A fila está cheia.");
             System.out.println();   
         }
 
-        // Imprimindo todos os elementos da fila
+        
         fila.imprime();
 
-        // Removendo um elemento da fila
+       
         fila.remove();
         System.out.println();
         System.out.println("Removendo 1 item...");
         System.out.println();
 
-        // Imprimindo todos os elementos da fila após a remoção
+        
         fila.imprime();
 
         System.out.println();
@@ -100,7 +100,7 @@ public class Main {
             System.out.println();
         }
 
-        // Verificando se a fila está vazia
+        
         if (fila.vazia()) {
             System.out.println("A fila está vazia.");
         } else {
